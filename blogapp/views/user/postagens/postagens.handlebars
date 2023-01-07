@@ -1,0 +1,31 @@
+<div class="mt-4">
+    <h1 class="text-center">Lista de postagens</h1>
+    
+    <hr>
+    {{#each postagens}}
+        
+        <div style="margin: 0px 25vw 25px 25vw" class="card">
+            <div class="card-body">
+                <h2 class="text-center">{{titulo}}</h2>
+                <p class="text-center">Descrição: {{descricao}}</p>
+                <p class="text-center">Conteúdo: {{conteudo}}</p>
+                
+                <hr>
+
+                <small>Categoria: {{categoria.nome}}</small><br>
+                <small>Slug: {{categoria.slug}}</small>
+            
+                <div class="mt-4">
+                    <form action="/postagemFocus" method="post">
+                        <input hidden type="text" name="postagemFocus" value="{{_id}}">
+                        <button type="submit" class="btn btn-success">Leia mais</button>
+                    </form>
+                </div>
+            
+            </div>
+        </div>
+
+    {{else}}
+        <div class="text-center">Nenhuma postagem encontrada :/</div>
+    {{/each}}
+</div>

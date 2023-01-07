@@ -1,0 +1,47 @@
+{{#if errNome}}
+    <div class="alert alert-danger">{{errNome}}</div>
+{{/if}}
+
+{{#if errEmail}}
+    <div class="alert alert-danger">{{errEmail}}</div>
+{{/if}}
+
+{{#if errSenha}}
+    <div class="alert alert-danger">{{errSenha}}</div>
+{{/if}}
+
+<div class="card">
+    <div class="card-body">
+        <form action="/cad" method="post" id="formCadastro">
+            <div style="margin: 0px 25vw 0px 25vw" class="mb-4">
+                <label for="nome" class="form-label">Nome: </label>
+                <input type="text" name="nome" class="form-control" placeholder="Digite o nome do usuario...">
+            </div>
+
+            <div style="margin: 0px 25vw 0px 25vw" class="mb-4">
+                <label for="email" class="form-label">Email: </label>
+                <input type="email" name="email" class="form-control" placeholder="Digite o seu E-mail...">
+            </div>
+
+            <div style="margin: 0px 25vw 0px 25vw" class="mb-4">
+                <label for="senha" class="form-label">Senha: </label>
+                <input type="password" name="senha" class="form-control" placeholder="Digite a senha...">
+            </div>
+
+            <div style="margin: 0px 25vw 0px 25vw" class="mb-4">
+                <label for="senhaRepeat" class="form-label">Repita a senha: </label>
+                <input type="password" name="senhaRepeat" class="form-control" placeholder="Repita a senha...">
+            </div>
+
+            <div style="margin: 0px 25vw 0px 25vw" class="mb-4">
+                <label for="isAdmin" class="form-label">O usuario é Admin?: </label>
+                <select name="isAdmin" id="formCadastro" class="custom-select">
+                    <option value="true">Sim</option>
+                    <option value="false" selected>Não</option>
+                </select>
+            </div>
+
+            <div class="mt-4 text-center"><button type="submit" class="btn btn-success">Cadastrar usuario</button></div>
+        </form>
+    </div>
+</div>

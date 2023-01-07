@@ -1,0 +1,16 @@
+<nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary">
+    <a class="navbar-brand" href="/">Blog App</a>
+
+    <div class="d-flex flex-row">
+      <div class="p-2"><a class="nav-link" href="/categorias">Categorias</a></div>
+      <div class="p-2"><a class="nav-link" href="/postagens">Postagens</a></div>
+      
+      {{#if user}}
+      <div class="p-2"><a href="/logout"><button class="btn btn-primary">Logout</button></a></div>
+      {{else}}
+      <div class="p-2"><a class="nav-link" href="/usuarioLogin">Login</a></div>
+      <div class="p-2"><a class="nav-link" href="/usuarioRegistro">Registro</a></div>
+
+      {{/if}}
+    </div>
+</nav>

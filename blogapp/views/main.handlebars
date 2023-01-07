@@ -1,0 +1,72 @@
+<div class="jumbotron text-center">
+  <h1 class="display-4">Bem vindo ao meu app!</h1>
+  <p class="lead">App para criação de postagens e categorias</p>
+  <hr class="my-4">
+  <p>Feito usando <a target="_blank" href="https://nodejs.org/en/">node.js</a> e seus modulos (Express, Handlebars, Mongoose, Connect-flash) e o banco de dados <a target="_blank" href="https://www.mongodb.com/">MongoDB</a></p>
+  <p class="lead mt-4">
+    <a class="btn btn-primary btn-lg" href="/usuarioRegistro" role="button">Crie uma conta</a>
+  </p>
+</div>
+
+{{!-- <hr> --}}
+
+    {{#if postagemSearchOne}}
+
+        <div class="card">
+            <div class="card-body">
+                <h2 class="text-center">{{postagemSearchOne.titulo}}</h2>
+                <p class="text-center">{{postagemSearchOne.descricao}}</p>
+                <p class="text-center">{{postagemSearchOne.conteudo}}</p>
+
+                <hr>
+
+                <small>Categoria: {{postagemSearchOne.categoria.nome}}</small><br>
+                <small>Slug: {{postagemSearchOne.categoria.slug}}</small>
+
+                <hr>
+                
+                <small>Data de criação: {{postagemSearchOne.date}}</small>
+
+                <form action="/postagemFocus" method="get" class="mt-4">
+                    <button class="btn btn-success">Minimizar</button>
+                </form>
+            </div>
+        </div>
+
+    {{else}}
+    
+        <h2 style="margin: 0px 0px 20px 0px;" class="text-center">Postagens recentes </h2>
+
+        {{#each postagens}}
+        
+            <div style="margin: 0px 25vw 25px 25vw" class="card">
+                <div class="card-body">
+                    <h2 class="text-center">{{titulo}}</h2>
+                    <p class="text-center">{{descricao}}</p>
+                    <p class="text-center">{{conteudo}}</p>
+
+                    <hr>
+
+                    <small>Categoria: {{categoria.nome}}</small><br>
+                    <small>Slug: {{categoria.slug}}</small>
+
+                    <hr>
+                
+                    <small>Data de criação: {{date}}</small>
+
+                    <hr>
+
+                    <div class="mt-4">
+                        <form action="/postagemFocus" method="post">
+                            <input hidden type="text" name="postagemFocus" value="{{_id}}">
+                            <button type="submit" class="btn btn-success">Leia mais</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+    {{else}}
+        <h4>Nenhuma postagem criada recentemente</h4>
+    {{/each}}
+
+    {{/if}}

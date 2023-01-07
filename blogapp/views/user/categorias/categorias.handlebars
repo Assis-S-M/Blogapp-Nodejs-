@@ -1,0 +1,22 @@
+<div class="mt-4">
+    <h1 class="text-center">Lista de categorias</h1>
+    
+    <hr>
+    
+    {{#each categorias}}
+        <div style="margin: 0px 25vw 0px 25vw" class="card mt-4">
+            <div class="card-body">
+                <h2 class="text-center">{{nome}}</h2>
+                <p class="text-center">{{slug}}</p>
+
+                <form action="/postsRelacionados" class="text-center" method="post">
+                    <input hidden type="text" name="categoria" value="{{_id}}">
+                    <button type="submit" class="btn btn-success">Ver postagens relacionadas</button>
+                </form>
+            </div>
+        </div>
+        
+    {{else}}
+        <h4 class="text-center">Nenhuma categoria encontrada :/</h4>
+    {{/each}}
+</div>

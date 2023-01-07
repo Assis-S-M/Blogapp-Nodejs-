@@ -1,0 +1,41 @@
+<div class="mt-4">
+    <h1 class="text-center">Lista de postagens</h1>
+    
+    <hr>
+    {{#each postagens}}
+        
+        <div style="margin: 0px 25vw 25px 25vw" class="card">
+            <div class="card-body">
+                <h2 class="text-center">{{titulo}}</h2>
+                <p class="text-center">Descrição: {{descricao}}</p>
+                <p class="text-center">Conteúdo: {{conteudo}}</p>
+                <small>Data de criação: {{date}}</small><br>
+                <small>Categoria: {{categoria.nome}}</small><br>
+                <small>Slug: {{categoria.slug}}</small>
+            
+                
+                <div class="mt-3">
+                    <form action="/admin/editPostagem" method="post">
+                        <button type="submit" class="btn btn-success" name="id" value="{{_id}}">Editar postagem</button>
+                    </form>
+                </div>
+
+                <div class="mt-3">
+                    <form action="/admin/del" method="post">
+                        <input hidden type="text" name="pagina" value="delPostagens">
+                        <button type="submit" class="btn btn-danger" name="id" value="{{_id}}">Deletar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    {{else}}
+        <div class="text-center">Nenhuma postagem encontrada :/</div>
+    {{/each}}
+
+    <form action="/admin/addPostagem" method="get">
+        <div class="mt-4 col text-center">
+            <button type="submit" class="btn btn-success">Criar nova postagem</button>
+        </div>
+    </form>
+</div>

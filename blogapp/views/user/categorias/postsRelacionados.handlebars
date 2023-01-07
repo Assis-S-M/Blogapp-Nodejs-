@@ -1,0 +1,22 @@
+<div class="mt-4">
+    <h1 class="text-center">Lista de categorias</h1>
+    
+    <hr>
+    
+    {{#each postagens}}
+        <div style="margin: 0px 25vw 0px 25vw" class="card mt-4">
+            <div class="card-body">
+                <h2 class="text-center">{{titulo}}</h2>
+                <p class="text-center">{{descricao}}</p>
+                <p class="text-center">{{conteudo}}</p>
+                
+                <hr>
+
+                <small>{{date}}</small>
+            </div>
+        </div>
+        
+    {{else}}
+        <h4 class="text-center">Nenhuma postagem encontrada :/</h4>
+    {{/each}}
+</div>

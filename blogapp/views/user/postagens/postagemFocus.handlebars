@@ -1,0 +1,20 @@
+        <div class="card">
+            <div class="card-body">
+                <h2 class="text-center">{{postagemFocus.titulo}}</h2>
+                <p class="text-center">{{postagemFocus.descricao}}</p>
+                <p class="text-center">{{postagemFocus.conteudo}}</p>
+
+                <hr>
+
+                <small>Categoria: {{postagemFocus.categoria.nome}}</small><br>
+                <small>Slug: {{postagemFocus.categoria.slug}}</small>
+
+                <hr>
+                
+                <small>Data de criação: {{postagemFocus.date}}</small>
+
+                <form action="/postagens" method="get" class="mt-4">
+                    <button class="btn btn-success">Minimizar</button>
+                </form>
+            </div>
+        </div>

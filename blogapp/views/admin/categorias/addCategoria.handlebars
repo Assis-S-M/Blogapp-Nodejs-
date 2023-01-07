@@ -1,0 +1,31 @@
+{{#if errNome}}
+    <div class="alert alert-danger">{{errNome}}</div>
+{{/if}}
+
+{{#if errSlug}}
+    <div class="alert alert-danger">{{errSlug}}</div>
+{{/if}}
+
+<div style="margin: 25px 25px 0px 25px" class="card">
+    <div class="card-body">
+        <form action="/admin/add" method="post">
+            
+            <input hidden type="text" name="pagina" value="addCategoria">
+            
+            <div style="margin: 0px 25vw 0px 25vw" class="mb-4">
+                <label for="nome" class="form-label">Nome da categoria: <br></label>
+                <input type="text" class="form-control" placeholder="Digite o nome da categoria..." name="nome" id="nome">
+            </div>
+
+            <div style="margin: 0px 25vw 0px 25vw" class="mb-5">
+                <label for="slug" class="form-label">Slug da categoria: <br></label>
+                <textarea class="form-control" id="slug" rows="3" name="slug"></textarea>
+            </div>
+
+            <div class="col text-center">
+                <button type="submit" class="btn btn-success mb-3">Criar categoria</button>
+            </div>
+
+        </form>
+    </div>
+</div>

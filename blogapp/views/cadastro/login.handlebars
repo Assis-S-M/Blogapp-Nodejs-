@@ -1,0 +1,34 @@
+{{#if errNome}}
+    <div class="alert alert-danger">{{errNome}}</div>
+{{/if}}
+
+{{#if errEmail}}
+    <div class="alert alert-danger">{{errEmail}}</div>
+{{/if}}
+
+{{#if errSenha}}
+    <div class="alert alert-danger">{{errSenha}}</div>
+{{/if}}
+
+{{#if err}}
+    <div class="alert alert-danger">{{err}}</div>
+{{/if}}
+
+<div class="card">
+    <div class="card-body">
+        <form action="/login" method="post">
+
+            <div style="margin: 0px 25vw 0px 25vw" class="mb-4">
+                <label for="email" class="form-label">Email: </label>
+                <input type="email" name="email" class="form-control" placeholder="Digite o seu E-mail...">
+            </div>
+
+            <div style="margin: 0px 25vw 0px 25vw" class="mb-4">
+                <label for="senha" class="form-label">Senha: </label>
+                <input type="password" name="senha" class="form-control" placeholder="Digite a senha...">
+            </div>
+
+            <div class="mt-4 text-center"><button type="submit" class="btn btn-success">Fazer login</button></div>
+        </form>
+    </div>
+</div>

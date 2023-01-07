@@ -1,0 +1,64 @@
+{{#if errTitulo}}
+    <div class="alert alert-danger">{{errTitulo}}</div>
+{{/if}}
+
+{{#if errSlug}}
+    <div class="alert alert-danger">{{errSlug}}</div>
+{{/if}}
+
+{{#if errDesc}}
+    <div class="alert alert-danger">{{errDesc}}</div>
+{{/if}}
+
+{{#if errConteudo}}
+    <div class="alert alert-danger">{{errConteudo}}</div>
+{{/if}}
+
+{{#if errCategoria}}
+    <div class="alert alert-danger">{{errCategoria}}</div>
+{{/if}}
+
+<div style="margin: 25px 25px 0px 25px" class="card">
+    <div class="card-body">
+        <form action="/admin/add" method="post" id="formPostagem">
+        
+            <input hidden type="text" name="pagina" value="addPostagem">
+        
+            <div style="margin: 0px 25vw 0px 25vw" class="mb-4">
+                <label for="titulo" class="form-label">Titulo: </label>
+                <input type="text" class="form-control" name="titulo" id="titulo" placeholder="Digite o titulo...">
+            </div>
+
+            <div style="margin: 0px 25vw 0px 25vw" class="mb-4">
+                <label for="slug" class="form-label">Slug: </label>
+                <input type="text" class="form-control" name="slug" id="slug" placeholder="Digite o slug...">
+            </div>
+
+            <div style="margin: 0px 25vw 0px 25vw" class="mb-4">
+                <label for="descricao" class="form-label">Descrição: </label>
+                <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Digite a descrição">
+            </div>
+
+            <div style="margin: 0px 25vw 0px 25vw" class="mb-4">
+                <label for="conteudo" class="form-label">Conteudo: </label>
+                <textarea class="form-control" name="conteudo" id="conteudo" placeholder="Digite o conteudo..."></textarea>
+            </div>
+            
+            <div style="margin: 0px 25vw 0px 25vw" class="mb-4">
+                <label for="categoria" class="form-label">Categoria: </label>
+                <select class="custom-select" name="categoria" id="formPostagem">
+                    {{#each categorias}}
+                        <option value="{{_id}}">{{nome}}</option>
+
+                    {{else}}
+                        <option value="0">Nenhuma categoria cadastrada</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-success">Criar postagem</button>
+            </div>
+        </form>
+    </div>
+</div>
